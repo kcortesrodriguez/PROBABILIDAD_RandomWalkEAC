@@ -17,21 +17,28 @@ public class EACWalk2D {
 		long step=0;
 		java.util.List<Point> coordenadas = new ArrayList<>();		
 		
-		do{
-			dir=EACRandom.getDireccion();
-			step++;
-			switch(dir){
-				case 1: y++; System.out.println("arriba"); break;
-				case 2: y--; System.out.println("abajo");break;
-				case 3: x++; System.out.println("derecha");break;
-				case 4: x--; System.out.println("izquierda");break;
-			}
+
+			do{
+				dir=EACRandom.getDireccion();
+				step++;
+				switch(dir){
+					case 1: y++; break;
+					case 2: y--; break;
+					case 3: x++; break;
+					case 4: x--; break;
+				}
+				
+				Point p =new Point(x, y);
+				System.out.println(p);
+				coordenadas.add(p);
+				
+			}while((x!=0 || y!=0) && step<=10000);
 			
-			coordenadas.add(new Point(x, y));
+			if(x!=0 && y!=0)
+				System.out.println("OUT OF RANGE");
+			else
+				System.out.println(step);
 			
-		}while((x!=0 || y!=0) && step<10000);
-		
-		System.out.println(step);
 		return coordenadas;	
 	}
 

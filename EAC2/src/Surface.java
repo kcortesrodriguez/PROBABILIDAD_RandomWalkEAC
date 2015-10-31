@@ -27,18 +27,18 @@ public class Surface extends JPanel {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setColor(Color.BLACK);
 		g2d.fillOval(cx, cy, pixels-10, pixels-10);
-		g2d.drawLine(0, 0, coordenadas.get(0).x, coordenadas.get(0).y);
+		g2d.drawLine(cx,cy, coordenadas.get(0).x*pixels+cx, -1*coordenadas.get(0).y*pixels+cy);
 		
         //g2d.drawLine(30, 30, 200, 30);
 		for(int i = 0; i < coordenadas.size()-1; i++){
 			int x1 = coordenadas.get(i).x*pixels + cx;
-			int y1 = coordenadas.get(i).y*pixels + cy;
+			int y1 = -1*coordenadas.get(i).y*pixels +cy ;
 			int x2 = coordenadas.get(i+1).x*pixels+ cx;
-			int y2 = coordenadas.get(i+1).y*pixels+ cy;
+			int y2 = -1*coordenadas.get(i+1).y*pixels +cy;
 			g2d.drawLine(x1, y1, x2, y2);
 		}
 		
-    }
+   }
 
     @Override
     public void paintComponent(Graphics g) {
