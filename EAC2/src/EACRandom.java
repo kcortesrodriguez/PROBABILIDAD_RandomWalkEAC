@@ -11,7 +11,7 @@ public class EACRandom {
 	
 	public static int getDireccion(){
 		int random = (int )(Math.random() * 4 + 1);
-		return random;
+		return Math.abs(random);
 	}
 	
 }
