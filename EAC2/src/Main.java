@@ -1,15 +1,22 @@
+import java.awt.EventQueue;
+import java.awt.Point;
+import java.util.List;
+
 public class Main {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		/*
-		for(int i=0;i<10000;i++){
-			System.out.println((i+1) +" " +EACWalk1D.startWalk1D());
-		}
-		*/
-		System.out.println(EACWalk2D.startWalk2D());
+		
+		List<Point> coordenadas = EACWalk2D.startWalk2D();
+
+		EventQueue.invokeLater(new Runnable() {
+			
+			@Override
+			public void run() {
+				MyLines lines = new MyLines(coordenadas);
+				lines.setVisible(true);
+			}
+		});
+
 		
 	}
 

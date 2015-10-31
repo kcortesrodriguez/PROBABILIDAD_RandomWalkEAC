@@ -1,6 +1,9 @@
-public class EACWalk2D {
+import java.awt.*;
+import java.util.ArrayList;
 
-	public static long startWalk2D(){
+public class EACWalk2D {
+	
+	public static java.util.List<Point> startWalk2D(){
 		/*
 		 * 1 - ARRIBA
 		 * 2 - ABAJO
@@ -12,21 +15,24 @@ public class EACWalk2D {
 		int x = 0;
 		int dir;
 		long step=0;
-		Integer[] pos = {0,0,0,0};
+		java.util.List<Point> coordenadas = new ArrayList<>();		
 		
 		do{
 			dir=EACRandom.getDireccion();
 			step++;
 			switch(dir){
-				case 1: y++; pos[0]++; break;
-				case 2: y--; pos[1]++; break;
-				case 3: x++;pos[2]++;break;
-				case 4: x--;pos[3]++;break;
+				case 1: y++; System.out.println("arriba"); break;
+				case 2: y--; System.out.println("abajo");break;
+				case 3: x++; System.out.println("derecha");break;
+				case 4: x--; System.out.println("izquierda");break;
 			}
 			
-		}while(x!=0 || y!=0);
+			coordenadas.add(new Point(x, y));
+			
+		}while((x!=0 || y!=0) && step<10000);
 		
-		return step;		
+		System.out.println(step);
+		return coordenadas;	
 	}
 
 }
