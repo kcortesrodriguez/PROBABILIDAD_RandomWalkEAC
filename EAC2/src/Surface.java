@@ -23,9 +23,7 @@ public class Surface extends JPanel {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int cx = screenSize.width/2;
 		int cy = screenSize.height/2;
-
-		//int cx=0;
-		//int cy=0;
+		int pixels = 10;
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setColor(Color.BLACK);
 		g2d.fillOval(cx, cy, 5, 5);
@@ -33,8 +31,8 @@ public class Surface extends JPanel {
 		
         //g2d.drawLine(30, 30, 200, 30);
 		for(int i = 0; i < coordenadas.size()-1; i++){
-			int x1 = coordenadas.get(i).x*10 + cx;
-			int y1 = coordenadas.get(i).y*10 + cy;
+			int x1 = coordenadas.get(i).x*pixels + cx;
+			int y1 = coordenadas.get(i).y*pixels + cy;
 			int x2 = coordenadas.get(i+1).x*10 + cx;
 			int y2 = coordenadas.get(i+1).y*10 + cy;
 			g2d.drawLine(x1, y1, x2, y2);

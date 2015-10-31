@@ -13,7 +13,6 @@ public class MyLines extends JFrame{
 		walkSurface.setCoordenadas(coordenadas);
 		add(walkSurface);
 		setTitle("EAC Walk2D - La caminata del Borracho");
-		//setSize(screenSize.width,screenSize.height);
 		setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
